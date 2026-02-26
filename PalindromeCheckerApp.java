@@ -4,10 +4,14 @@ public class PalindromeCheckerApp {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         String s = sc.nextLine();
-        String x = s;
+        char[] c = s.toCharArray();
+
+        int r = c.length - 1;
         boolean not = false;
-        for (int i = x.length() - 1 ; i >= 0 ; i--){
-            if (s.charAt(i) != x.charAt(x.length() - i - 1)) not = true;
+
+        for (int l = 0 ; l < c.length ; l++){
+            if (c[r] != c[l]) not = true;
+            else r--;
         }
 
         if (!not) System.out.println("It is a Palindrome");
